@@ -1,0 +1,104 @@
+.hero {
+  padding: 2rem 0;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.trip-type-tabs {
+  display: inline-flex;
+  background: #eceff1;
+  border-radius: 999px;
+  padding: 0.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.tab {
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.tab.active {
+  background: #fff;
+}
+
+.flight-search-bar {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 1fr 1fr 0.9fr 0.9fr auto;
+  gap: 0;
+  background: #ff6d00;
+  border-radius: 999px;
+  padding: 0.35rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.segment {
+  background: #fff;
+  padding: 0.4rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #eceff1;
+}
+
+.segment:last-child {
+  border-right: none;
+}
+
+.segment label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #78909c;
+  margin-bottom: 0.1rem;
+}
+
+.segment input,
+.segment select {
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.action-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.search-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.8rem;
+  background: #263238;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: #000;
+}
+
+@media (max-width: 900px) {
+  .flight-search-bar {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+  }
+
+  .segment {
+    border-right: none;
+    border-bottom: 1px solid #eceff1;
+  }
+
+  .segment:last-child {
+    border-bottom: none;
+  }
+}
