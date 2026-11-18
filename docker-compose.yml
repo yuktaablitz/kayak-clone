@@ -1,0 +1,31 @@
+# Everything the flight service needs locally. Start with: docker compose up -d
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: kayak
+      MYSQL_DATABASE: kayak_flights
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./scripts/flight-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./scripts/seed-flights.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  kafka:
+    image: apache/kafka:3.8.0
+    ports:
+      - "9092:9092"
+
+volumes:
+  mysql_data:
